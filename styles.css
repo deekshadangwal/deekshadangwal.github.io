@@ -13,7 +13,7 @@
     --text-color: #37352f;
     --background-color: #ffffff;
     --link-color: #2383e2;
-    --hover-color: #eb5757;
+    --hover-color: #4a9eed;
     --nav-background: #fafafa;
     --nav-border: #e0e0e0;
     --active-nav: #f0f0f0;
@@ -211,7 +211,7 @@ li {
         --text-color: rgba(255, 255, 255, 0.9);
         --background-color: #191919;
         --link-color: #2196f3;
-        --hover-color: #ff4081;
+        --hover-color: #64b5f6;
         --nav-background: #232323;
         --nav-border: #333333;
         --active-nav: #2d2d2d;
