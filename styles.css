@@ -20,6 +20,10 @@
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     --font-family-mono: 'iawriter-mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, 'PT Mono', 'Liberation Mono', monospace;
     --font-family-serif: 'Lyon-Text', Georgia, 'Times New Roman', serif;
+    --muted-color: rgba(55, 53, 47, 0.6);
+    --subtle-color: rgba(55, 53, 47, 0.8);
+    --divider-color: rgba(55, 53, 47, 0.09);
+    --callout-background: rgba(35, 131, 226, 0.07);
     --content-width: 708px;
     --margin-width: 96px;
 }
@@ -215,6 +219,10 @@ li {
         --nav-background: #232323;
         --nav-border: #333333;
         --active-nav: #2d2d2d;
+        --muted-color: rgba(255, 255, 255, 0.55);
+        --subtle-color: rgba(255, 255, 255, 0.75);
+        --divider-color: rgba(255, 255, 255, 0.1);
+        --callout-background: rgba(33, 150, 243, 0.12);
     }
 }
 
@@ -269,7 +277,7 @@ h2 {
 .publication {
     margin-bottom: 32px;
     padding-bottom: 24px;
-    border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    border-bottom: 1px solid var(--divider-color);
 }
 
 .publication:last-child {
@@ -283,7 +291,7 @@ h2 {
 .publication-authors {
     font-size: 15px;
     margin-bottom: 4px;
-    color: rgba(55, 53, 47, 0.8);
+    color: var(--subtle-color);
 }
 
 .publication-venue {
@@ -348,6 +356,23 @@ h2 {
     color: white;
 }
 
+/* Job-market callout */
+.callout {
+    clear: both;
+    background-color: var(--callout-background);
+    border-radius: 6px;
+    padding: 4px 16px;
+}
+
+/* Contact links row */
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 /* Footer styles */
 .footer {
     background-color: var(--nav-background);
@@ -361,7 +386,7 @@ h2 {
     margin: 0 auto;
     text-align: center;
     font-size: 14px;
-    color: rgba(55, 53, 47, 0.6);
+    color: var(--muted-color);
 }
 
 /* Responsive adjustments for smaller screens */
@@ -383,4 +408,109 @@ h2 {
         width: 100%;
         text-align: center;
     }
+}
+/* Publications: compact spacing */
+.publication {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+}
+
+.publication h3 {
+    font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+
+.publication p {
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+
+.publication-authors {
+    font-size: 14px;
+}
+
+.publication-venue {
+    margin-bottom: 4px;
+}
+
+.publication-links {
+    gap: 12px;
+}
+
+/* Research vignettes */
+.vignette {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 28px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.vignette:last-child {
+    border-bottom: none;
+}
+
+.vignette h3 {
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+
+.vignette p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.vignette-meta {
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+.vignette-papers {
+    list-style: none;
+    padding-left: 0;
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+.vignette-papers li {
+    margin-bottom: 4px;
+}
+
+.vignette-figure {
+    margin: 0;
+    align-self: start;
+}
+
+.vignette-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #ffffff;
+    border: 1px solid var(--divider-color);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.vignette-figure figcaption {
+    font-size: 12px;
+    color: var(--muted-color);
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .vignette {
+        grid-template-columns: 1fr;
+    }
+
+    .vignette-figure {
+        max-width: 320px;
+    }
+}
+
+.vignette-text:only-child {
+    grid-column: 1 / -1;
 }

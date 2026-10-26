@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deeksha Dangwal's Personal Website</title>
+    <title>Deeksha Dangwal</title>
+    <meta name="description" content="Deeksha Dangwal: security researcher working on AI safety, with a background in computer architecture and hardware security.">
+    <meta property="og:title" content="Deeksha Dangwal">
+    <meta property="og:description" content="Security researcher working on AI safety, with a background in computer architecture and hardware security.">
+    <meta property="og:image" content="https://www.deekshadangwal.com/headshot.jpg">
+    <meta property="og:url" content="https://www.deekshadangwal.com/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +24,9 @@
                 </div>
                 <div class="nav-links">
                     <a href="index.html" class="nav-link active">About</a>
+                    <a href="research.html" class="nav-link">Research</a>
                     <a href="publications.html" class="nav-link">Publications</a>
-                    <a href="cv.html" class="nav-link">CV</a>
+                    <a href="deeksha_dangwal_cv.pdf" class="nav-link" target="_blank">CV</a>
                 </div>
             </div>
         </nav>
@@ -28,32 +35,44 @@
             <main class="layout-content">
                 <div class="page-content">
                     <h1 class="page-title">About me</h1>
-                    
+
                     <div class="profile-image">
-                        <!-- Replace with your actual image path -->
-                        <img src="headshot.jpg" alt="Profile Photo">
-                    </div>
-                    
-                    <div class="block-content">
-                        <p>I am a computer architect working at the intersection of hardware-software co-design, privacy, and AI systems. My work spans formal privacy models, secure and homomorphic computation, architecture modeling and agile hardware tooling, and privacy-preserving computer vision for augmented reality, with publications in top venues including ISCA, ASPLOS, PLDI, FPL, and TMLR.</p>
+                        <img src="headshot.jpg" alt="Deeksha Dangwal">
                     </div>
 
                     <div class="block-content">
-                        <p>Most recently, I was a consultant at the Allen Institute, where I co-developed neural tracing for mechanistic interpretability of LLMs and bio-foundation models. Before that, I was a research scientist at Meta Reality Labs Research, where I worked on energy-efficient system design for AR/smart glasses, system-level power modeling for wearable devices, and privacy research for extended reality.</p>
+                        <p>I am a security researcher working on AI safety, with a background in computer architecture and hardware security. My current work is on compute verification and on training-time safety monitoring. See my <a href="research.html">Research</a> page for details; if you are interested in either project, please <a href="mailto:deekshadangwal@gmail.com">reach out</a>. My work in computer architecture, privacy, and secure computation has appeared in <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ISCA-18-charm.pdf">ISCA</a>, <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-19-wring.pdf">ASPLOS</a>, <a href="https://arxiv.org/pdf/2101.07841">PLDI</a>, <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf">FPL</a>, <a href="https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf">BMVC</a>, and <a href="https://arxiv.org/pdf/2412.10448">TMLR</a>.</p>
                     </div>
 
                     <div class="block-content">
-                        <p>I received my PhD from UC Santa Barbara, where I worked with Prof. Tim Sherwood on the design of private computer systems. I am a Rising Stars in EECS alumna, my SoK on hardware-software-security codesign was cited in the US National Strategy on Microelectronics Research, and trace wringing was recognized as an IEEE Micro Top Pick.</p>
+                        <p>I am a Fellow at MATS Research in Berkeley, CA, where I work on compute verification with James Petrie (Future of Life Institute). Through the ERA:AI Fellowship in Technical AI Governance (Cambridge, UK), I work on training-time safety monitoring with Alan Cooney (Google DeepMind). Before these fellowships, I co-developed neural tracing for mechanistic interpretability of LLMs and bio-foundation models with collaborators at the Allen Institute, and I was a research scientist at Meta Reality Labs Research, where I worked on energy-efficient system design for smart glasses, system-level power modeling for wearable devices, and privacy research for extended reality.</p>
                     </div>
-                    
+
+                    <div class="block-content">
+                        <p>I received my PhD from UC Santa Barbara, where I worked with <a href="https://sites.cs.ucsb.edu/~sherwood/">Prof. Tim Sherwood</a> on the design of private computer systems. My dissertation, <a href="https://www.proquest.com/docview/2923629631">&ldquo;A System-level Framework for Privacy&rdquo;</a>, introduced trace wringing, a technique for sharing program behavior with verifiable bounds on information leakage. I am a Rising Stars in EECS alumna, my <a href="https://arxiv.org/pdf/2105.00378">SoK on hardware-software-security codesign</a> was cited in the <a href="https://www.nitrd.gov/pubs/National-Strategy-on-Microelectronics-Research-March-2024.pdf">US National Strategy on Microelectronics Research</a>, and <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/IEEEMicro-20-wringing.pdf">trace wringing</a> was recognized as an IEEE Micro Top Pick.</p>
+                    </div>
+
+                    <div class="block-content callout">
+                        <p><strong>I am on the job market</strong> for research positions in industry and academia, including faculty positions. Please feel free to reach out at <a href="mailto:deekshadangwal@gmail.com">deekshadangwal@gmail.com</a>.</p>
+                    </div>
+
+                    <div class="block-content contact-row">
+                        <a href="mailto:deekshadangwal@gmail.com">Email</a>
+                        <a href="https://scholar.google.com/citations?user=11KckrAAAAAJ&hl=en">Google Scholar</a>
+                        <a href="deeksha_dangwal_cv.pdf" target="_blank">CV (PDF)</a>
+                    </div>
+
                     <div class="block-content">
                         <h2>📰 News</h2>
                         <ul>
-                            <li><strong>[2026]</strong> Our paper "The Need for Computational Pluralism" was accepted at the Workshop on Ethical Systems and Architecture Design (HotEthics) 2026!</li>
-                            <li><strong>[September 2025]</strong> I had the chance to represent CRA and Washington State at CRA Congressional Visit Day in Washington, D.C.</li>
-                            <li><strong>[July 2025]</strong> I was invited to participate in the CCC Future of AI Research in Industry workshop.</li>
+                            <li><strong>[Fall 2026]</strong> I am co-mentoring a <a href="https://sparai.org/projects/f26/recIHq2myqMGSkiHs/">SPAR project</a> on constraint drift through delegation hierarchies with Abhejit Rajagopal.</li>
+                            <li><strong>[September 2026]</strong> I joined MATS Research in Berkeley, CA as a Fellow, working on compute verification.</li>
+                            <li><strong>[July 2026]</strong> I started the ERA:AI Fellowship in Technical AI Governance in Cambridge, UK.</li>
+                            <li><strong>[2026]</strong> Our paper "The Need for Computational Pluralism" was accepted at the Workshop on Ethical Systems and Architecture Design (HotEthics) 2026.</li>
+                            <li><strong>[September 2025]</strong> I represented CRA and Washington State at CRA Congressional Visit Day in Washington, D.C.</li>
+                            <li><strong>[July 2025]</strong> I was an invited participant in the CCC Future of AI Research in Industry workshop.</li>
                             <li><strong>[June 2025]</strong> I gave a talk on "Performance, Power, and Privacy: Codesign Strategies for Always-On Wearables" at Washington State University, Pullman.</li>
-                            <li><strong>[May 2025]</strong> I was invited to participate in the CCC Computing Futures Symposium.</li>
+                            <li><strong>[May 2025]</strong> I was an invited participant in the CCC Computing Futures Symposium.</li>
                             <li><strong>[May 2025]</strong> I gave a talk on "Privacy and Security in the age of Metaverse" at Washington State University, Everett.</li>
                         </ul>
                     </div>
@@ -75,7 +94,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="block-content">
                         <h2>🏆 Awards and Honors</h2>
                         <ul>
@@ -85,13 +104,12 @@
                             <li><strong>[2020] IEEE Micro Top Pick: "Trace Wringing for Program Trace Privacy"</strong></li>
                             <li><strong>[2020] UCSB Graduate Division's Fiona and Michael Goodchild Graduate Mentoring Award</strong></li>
                             <li><strong>[2020] UCSB Department of Computer Science Outstanding Graduate Student Award</strong></li>
-                            <li><strong>[2015] Second Place Winner, NXP Embedded Design Challenge</strong></li>
                         </ul>
                     </div>
                 </div>
             </main>
         </div>
-        
+
         <footer class="footer">
             <div class="footer-content">
                 <p>© 2026 Deeksha Dangwal</p>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Deeksha Dangwal</title>
+    <meta name="description" content="Research areas and selected papers of Deeksha Dangwal: compute verification, training-time safety monitoring, trace wringing, privacy for extended reality, and agile hardware design.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="notion-light-theme">
+    <div class="notion-app-inner">
+        <nav class="navigation">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">Deeksha Dangwal</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">About</a>
+                    <a href="research.html" class="nav-link active">Research</a>
+                    <a href="publications.html" class="nav-link">Publications</a>
+                    <a href="deeksha_dangwal_cv.pdf" class="nav-link" target="_blank">CV</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="layout layout-wide">
+            <main class="layout-content">
+                <div class="page-content">
+                    <h1 class="page-title">Research</h1>
+
+                    <div class="block-content" id="current-work">
+                        <h2>🔬 Current Work</h2>
+
+                        <div class="vignette">
+                            <div class="vignette-text">
+                                <h3>Compute verification</h3>
+                                <p class="vignette-meta">MATS Research, with James Petrie (Future of Life Institute)</p>
+                                <p>Compute verification asks whether a third party can check what a GPU has been running without trusted hardware. I am designing software-based protocols that combine memory-state challenges on high-bandwidth memory with subsampled zero-knowledge proofs, and I am building the security argument that bounds the undeclared workload an operator can run while still passing verification.</p>
+                            </div>
+                        </div>
+
+                        <div class="vignette">
+                            <div class="vignette-text">
+                                <h3>Training-time safety monitoring</h3>
+                                <p class="vignette-meta">ERA:AI Fellowship, with Alan Cooney (Google DeepMind)</p>
+                                <p>This project asks whether a fine-tuning job that removes a model&rsquo;s safety training can be detected while it is still running. The monitor runs below the privilege level of the party running the job and is outside that party&rsquo;s control.</p>
+                                <ul class="vignette-papers">
+                                    <li>Position: Safety Monitoring Should Operate on Weights During Fine-Tuning. <em>In preparation, 2026.</em> Happy to share a draft; please <a href="mailto:deekshadangwal@gmail.com">reach out</a>.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="vignette">
+                            <div class="vignette-text">
+                                <h3>Constraint drift through delegation hierarchies</h3>
+                                <p class="vignette-meta">SPAR (Supervised Program for Alignment Research) mentor, Fall 2026, with Abhejit Rajagopal (Allen Institute and UCSF)</p>
+                                <p>When an orchestrator agent delegates work to sub-agents, the constraints it was given can weaken along the way. This project measures that loss across constraint types and delegation depths, and tests whether constraints lose force partly because delegation strips them of their system-level status, not only because their wording changes.</p>
+                                <ul class="vignette-papers">
+                                    <li><a href="https://sparai.org/projects/f26/recIHq2myqMGSkiHs/">Project page</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-content">
+                        <h2>📚 Earlier Work</h2>
+
+                        <div class="vignette">
+                            <div class="vignette-text">
+                                <h3>Trace wringing: privacy for program traces</h3>
+                                <p class="vignette-meta">UC Santa Barbara, with Tim Sherwood</p>
+                                <p>Hardware designers need program traces from real workloads, but traces leak what the program was doing. Trace wringing forces a trace through a channel of only a few thousand bits, so the amount of information shared is bounded, while keeping the memory behavior that matters for performance evaluation. My dissertation built this into a system-level framework for privacy.</p>
+                                <ul class="vignette-papers">
+                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-19-wring.pdf">Safer Program Behavior Sharing through Trace Wringing</a>. ASPLOS 2019.</li>
+                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/IEEEMicro-20-wringing.pdf">Trace Wringing for Program Trace Privacy</a>. IEEE Micro Top Picks 2020.</li>
+                                    <li><a href="https://ieeexplore.ieee.org/document/9604789">Context-Aware Privacy-Optimizing Address Tracing</a>. SEED 2021.</li>
+                                    <li><a href="https://www.proquest.com/docview/2923629631">A System-level Framework for Privacy</a>. PhD dissertation, 2022.</li>
+                                </ul>
+                            </div>
+                            <figure class="vignette-figure">
+                                <img src="img/trace-wringing.png" alt="Diagram: a sensitive trace is forced through an n-bit channel, with public information and a utility check, to produce a proxy trace.">
+                                <figcaption>Wringing a trace through an n-bit channel (IEEE Micro 2020).</figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="vignette">
+                            <div class="vignette-text">
+                                <h3>Security and privacy for extended reality</h3>
+                                <p class="vignette-meta">Meta Reality Labs Research</p>
+                                <p>Augmented reality devices send image features and other sensor data to services. We showed that sparse local feature descriptors can be reverse engineered into recognizable images, set up a privacy threat model for feature sharing, and studied mitigations and their cost to localization. Later work strengthened the attack with diffusion priors. Alongside this, the SoK maps where hardware, software, and cryptography can be co-designed for secure computing, and Porcupine is a synthesizing compiler for vectorized homomorphic encryption.</p>
+                                <ul class="vignette-papers">
+                                    <li><a href="https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf">Mitigating Reverse Engineering Attacks on Local Feature Descriptors</a>. BMVC 2021.</li>
+                                    <li><a href="https://arxiv.org/pdf/2412.10448">Unlocking Visual Secrets: Inverting Features with Diffusion Priors for Image Reconstruction</a>. TMLR 2025.</li>
+                                    <li><a href="https://arxiv.org/pdf/2105.00378">SoK: Opportunities for Software-Hardware-Security Codesign for Next Generation Secure Computing</a>. HASP 2020.</li>
+                                    <li><a href="https://arxiv.org/pdf/2101.07841">Porcupine: A Synthesizing Compiler for Vectorized Homomorphic Encryption</a>. PLDI 2021.</li>
+                                </ul>
+                            </div>
+                            <figure class="vignette-figure">
+                                <img src="img/feature-inversion.jpg" alt="Grid of landmark photos: original images in the top row, and images reconstructed from SIFT, FREAK, and SOSNet feature descriptors below.">
+                                <figcaption>Images reconstructed from SIFT, FREAK, and SOSNet descriptors (BMVC 2021).</figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="vignette">
+                            <div class="vignette-text">
+                                <h3>Agile hardware design and architecture modeling</h3>
+                                <p class="vignette-meta">UC Santa Barbara, with Tim Sherwood</p>
+                                <p>PyRTL is a hardware description language embedded in Python, built for rapid prototyping, instrumentation, and teaching. Charm is a language for closed-form, high-level architecture modeling that lets designers state models and constraints and explore a design space symbolically. I also led the development of OpenTPU, an open-source tensor processing unit written in PyRTL.</p>
+                                <ul class="vignette-papers">
+                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf">A Pythonic Approach for Rapid Hardware Prototyping and Instrumentation</a>. FPL 2017.</li>
+                                    <li><a href="https://ieeexplore.ieee.org/document/9099999">Agile Hardware Development and Instrumentation with PyRTL</a>. IEEE Micro 2020.</li>
+                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ISCA-18-charm.pdf">Charm: A Language for Closed-form High-level Architecture Modeling</a>. ISCA 2018.</li>
+                                    <li><a href="https://dl.acm.org/doi/pdf/10.1145/3360047">Language Support for Navigating Architecture Design in Closed Form</a>. JETC 2019.</li>
+                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/EMC2-19-pyrtl-matrix.pdf">PyRTLMatrix</a>. EMC2 2019. <a href="https://dl.acm.org/doi/10.1145/3338698.3338890">PyRTL in Early Undergraduate Research</a>. WCAE 2019.</li>
+                                    <li>Code: <a href="https://github.com/UCSBarchlab/PyRTL">PyRTL</a>, <a href="https://github.com/UCSBarchlab/Charm">Charm</a>, <a href="https://github.com/UCSBarchlab/OpenTPU">OpenTPU</a></li>
+                                </ul>
+                            </div>
+                            <figure class="vignette-figure">
+                                <img src="img/charm.png" alt="Diagram of the Charm interpreter: source code becomes types, models, and analysis; a dependency graph becomes a functional graph that is optimized, evaluated, and checked against constraints.">
+                                <figcaption>How Charm turns models into a functional graph (ISCA 2018).</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2026 Deeksha Dangwal</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
