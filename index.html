@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="block-content">
-                        <p>I am a systems researcher working on AI safety. My background is in computer architecture, and my work has focused on security and privacy. My current work is on compute verification and on training-time safety monitoring. See my <a href="research.html">Research</a> page for details; if you are interested in either project, please <a href="mailto:deekshadangwal@gmail.com">reach out</a>. My work in computer architecture, privacy, and secure computation has appeared in <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ISCA-18-charm.pdf">ISCA</a>, <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-19-wring.pdf">ASPLOS</a>, <a href="https://arxiv.org/pdf/2101.07841">PLDI</a>, <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf">FPL</a>, <a href="https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf">BMVC</a>, and <a href="https://arxiv.org/pdf/2412.10448">TMLR</a>.</p>
+                        <p>I am a systems researcher working on AI safety. My background is in computer architecture, and my work has focused on security and privacy. My current work is on compute verification and on training-time safety monitoring. See my <a href="research.html">Research</a> page for details; if you are interested in either project, please <a class="email" data-u="deekshadangwal" data-d="gmail.com">reach out</a>. My work in computer architecture, privacy, and secure computation has appeared in <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ISCA-18-charm.pdf">ISCA</a>, <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-19-wring.pdf">ASPLOS</a>, <a href="https://arxiv.org/pdf/2101.07841">PLDI</a>, <a href="https://sites.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf">FPL</a>, <a href="https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf">BMVC</a>, and <a href="https://arxiv.org/pdf/2412.10448">TMLR</a>.</p>
                     </div>
 
                     <div class="block-content">
@@ -53,11 +53,11 @@
                     </div>
 
                     <div class="block-content callout">
-                        <p><strong>I am on the job market</strong> for research positions in industry and academia, including faculty positions. Please feel free to reach out at <a href="mailto:deekshadangwal@gmail.com">deekshadangwal@gmail.com</a>.</p>
+                        <p><strong>I am on the job market</strong> for research positions in industry and academia, including faculty positions. Please feel free to reach out at <a class="email email-text" data-u="deekshadangwal" data-d="gmail.com">deekshadangwal [at] gmail [dot] com</a>.</p>
                     </div>
 
                     <div class="block-content contact-row">
-                        <a href="mailto:deekshadangwal@gmail.com">Email</a>
+                        <a class="email" data-u="deekshadangwal" data-d="gmail.com">Email</a>
                         <a href="https://scholar.google.com/citations?user=11KckrAAAAAJ&hl=en">Google Scholar</a>
                         <a href="deeksha_dangwal_cv.pdf" target="_blank">CV (PDF)</a>
                     </div>
@@ -116,5 +116,12 @@
             </div>
         </footer>
     </div>
+    <script>
+        document.querySelectorAll('a.email').forEach(function (a) {
+            var addr = a.dataset.u + '@' + a.dataset.d;
+            a.href = 'mailto:' + addr;
+            if (a.classList.contains('email-text')) { a.textContent = addr; }
+        });
+    </script>
 </body>
 </html>
