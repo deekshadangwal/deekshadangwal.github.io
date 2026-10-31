@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Deeksha Dangwal</title>
-    <meta name="description" content="Research areas and selected papers of Deeksha Dangwal: compute verification, training-time safety monitoring, trace wringing, privacy for extended reality, and agile hardware design.">
+    <meta name="description" content="Research areas and selected papers of Deeksha Dangwal: AI safety (compute verification, training-time safety monitoring), security and privacy (trace wringing, extended reality, secure computation), and hardware design and architecture modeling.">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +32,19 @@
                 <div class="page-content">
                     <h1 class="page-title">Research</h1>
 
-                    <div class="block-content" id="current-work">
-                        <h2>🔬 Current Work</h2>
+                    <div class="tag-bar" role="group" aria-label="Filter by topic">                        <button type="button" class="tag" data-tag="cryptography" aria-pressed="false">cryptography</button>
+                        <button type="button" class="tag" data-tag="machine-learning" aria-pressed="false">machine learning</button>
+                        <button type="button" class="tag" data-tag="privacy" aria-pressed="false">privacy</button>
+                        <button type="button" class="tag" data-tag="languages-compilers" aria-pressed="false">languages &amp; compilers</button>
+                        <button type="button" class="tag" data-tag="computer-architecture" aria-pressed="false">computer architecture</button>
+                        <button type="button" class="tag tag-clear" id="tag-clear" aria-hidden="true" aria-label="Clear filters" title="Clear filters">&times; clear</button>
+                    </div>
 
-                        <div class="vignette">
+                    <div class="block-content" id="current-work">
+                        <h2>🛡️ AI Safety</h2>
+                        <p class="section-note">My current work (2026–).</p>
+
+                        <div class="vignette" data-tags="cryptography computer-architecture">
                             <div class="vignette-text">
                                 <h3>Compute verification</h3>
                                 <p class="vignette-meta">MATS Research, with James Petrie (Future of Life Institute)</p>
@@ -43,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="vignette">
+                        <div class="vignette" data-tags="machine-learning">
                             <div class="vignette-text">
                                 <h3>Training-time safety monitoring</h3>
                                 <p class="vignette-meta">ERA:AI Fellowship, with Alan Cooney (Google DeepMind)</p>
@@ -51,7 +60,7 @@
                             </div>
                         </div>
 
-                        <div class="vignette">
+                        <div class="vignette" data-tags="machine-learning">
                             <div class="vignette-text">
                                 <h3>Constraint drift through delegation hierarchies</h3>
                                 <p class="vignette-meta">SPAR (Supervised Program for Alignment Research) mentor, Fall 2026, with Abhejit Rajagopal (Allen Institute and UCSF)</p>
@@ -63,19 +72,19 @@
                         </div>
                     </div>
 
-                    <div class="block-content">
-                        <h2>📚 Earlier Work</h2>
+                    <div class="block-content" id="security-privacy">
+                        <h2>🔒 Security and Privacy</h2>
 
-                        <div class="vignette">
+                        <div class="vignette" data-tags="privacy computer-architecture">
                             <div class="vignette-text">
                                 <h3>Trace wringing: privacy for program traces</h3>
                                 <p class="vignette-meta">UC Santa Barbara, with Tim Sherwood</p>
                                 <p>Hardware designers need program traces from real workloads, but traces leak what the program was doing. Trace wringing forces a trace through a channel of only a few thousand bits, so the amount of information shared is bounded, while keeping the memory behavior that matters for performance evaluation. My dissertation built this into a system-level framework for privacy.</p>
                                 <ul class="vignette-papers">
-                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-19-wring.pdf">Safer Program Behavior Sharing through Trace Wringing</a>. ASPLOS 2019.</li>
-                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/IEEEMicro-20-wringing.pdf">Trace Wringing for Program Trace Privacy</a>. IEEE Micro Top Picks 2020.</li>
-                                    <li><a href="https://ieeexplore.ieee.org/document/9604789">Context-Aware Privacy-Optimizing Address Tracing</a>. SEED 2021.</li>
-                                    <li><a href="https://www.proquest.com/docview/2923629631">A System-level Framework for Privacy</a>. PhD dissertation, 2022.</li>
+                                    <li data-tags="privacy computer-architecture"><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-19-wring.pdf">Safer Program Behavior Sharing through Trace Wringing</a>. ASPLOS 2019.</li>
+                                    <li data-tags="privacy computer-architecture"><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/IEEEMicro-20-wringing.pdf">Trace Wringing for Program Trace Privacy</a>. IEEE Micro Top Picks 2020.</li>
+                                    <li data-tags="privacy computer-architecture"><a href="https://ieeexplore.ieee.org/document/9604789">Context-Aware Privacy-Optimizing Address Tracing</a>. SEED 2021.</li>
+                                    <li data-tags="privacy computer-architecture"><a href="https://www.proquest.com/docview/2923629631">A System-level Framework for Privacy</a>. PhD dissertation, 2022.</li>
                                 </ul>
                             </div>
                             <figure class="vignette-figure">
@@ -84,16 +93,14 @@
                             </figure>
                         </div>
 
-                        <div class="vignette">
+                        <div class="vignette" data-tags="privacy machine-learning">
                             <div class="vignette-text">
-                                <h3>Security and privacy for extended reality</h3>
+                                <h3>Privacy for extended reality</h3>
                                 <p class="vignette-meta">Meta Reality Labs Research</p>
-                                <p>Augmented reality devices send image features and other sensor data to services. We showed that sparse local feature descriptors can be reverse engineered into recognizable images, set up a privacy threat model for feature sharing, and studied mitigations and their cost to localization. Later work strengthened the attack with diffusion priors. Alongside this, the SoK maps where hardware, software, and cryptography can be co-designed for secure computing, and Porcupine is a synthesizing compiler for vectorized homomorphic encryption.</p>
+                                <p>Augmented reality devices send image features and other sensor data to services. We showed that sparse local feature descriptors can be reverse engineered into recognizable images, set up a privacy threat model for feature sharing, and studied mitigations and their cost to localization. Later work strengthened the attack with diffusion priors.</p>
                                 <ul class="vignette-papers">
-                                    <li><a href="https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf">Mitigating Reverse Engineering Attacks on Local Feature Descriptors</a>. BMVC 2021.</li>
-                                    <li><a href="https://arxiv.org/pdf/2412.10448">Unlocking Visual Secrets: Inverting Features with Diffusion Priors for Image Reconstruction</a>. TMLR 2025.</li>
-                                    <li><a href="https://arxiv.org/pdf/2105.00378">SoK: Opportunities for Software-Hardware-Security Codesign for Next Generation Secure Computing</a>. HASP 2020.</li>
-                                    <li><a href="https://arxiv.org/pdf/2101.07841">Porcupine: A Synthesizing Compiler for Vectorized Homomorphic Encryption</a>. PLDI 2021.</li>
+                                    <li data-tags="privacy machine-learning"><a href="https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf">Mitigating Reverse Engineering Attacks on Local Feature Descriptors</a>. BMVC 2021.</li>
+                                    <li data-tags="privacy machine-learning"><a href="https://arxiv.org/pdf/2412.10448">Unlocking Visual Secrets: Inverting Features with Diffusion Priors for Image Reconstruction</a>. TMLR 2025.</li>
                                 </ul>
                             </div>
                             <figure class="vignette-figure">
@@ -102,17 +109,33 @@
                             </figure>
                         </div>
 
-                        <div class="vignette">
+                        <div class="vignette" data-tags="cryptography computer-architecture languages-compilers">
+                            <div class="vignette-text">
+                                <h3>Secure computation</h3>
+                                <p class="vignette-meta">Meta Reality Labs Research</p>
+                                <p>The SoK maps where hardware, software, and cryptography can be co-designed for secure computing. Porcupine is a synthesizing compiler that turns plaintext programs into vectorized homomorphic encryption kernels.</p>
+                                <ul class="vignette-papers">
+                                    <li data-tags="cryptography computer-architecture"><a href="https://arxiv.org/pdf/2105.00378">SoK: Opportunities for Software-Hardware-Security Codesign for Next Generation Secure Computing</a>. HASP 2020.</li>
+                                    <li data-tags="cryptography languages-compilers"><a href="https://arxiv.org/pdf/2101.07841">Porcupine: A Synthesizing Compiler for Vectorized Homomorphic Encryption</a>. PLDI 2021.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-content" id="hardware">
+                        <h2>⚙️ Hardware Design and Architecture Modeling</h2>
+
+                        <div class="vignette" data-tags="languages-compilers computer-architecture machine-learning">
                             <div class="vignette-text">
                                 <h3>Agile hardware design and architecture modeling</h3>
                                 <p class="vignette-meta">UC Santa Barbara, with Tim Sherwood</p>
                                 <p>PyRTL is a hardware description language embedded in Python, built for rapid prototyping, instrumentation, and teaching. Charm is a language for closed-form, high-level architecture modeling that lets designers state models and constraints and explore a design space symbolically. I also led the development of OpenTPU, an open-source tensor processing unit written in PyRTL.</p>
                                 <ul class="vignette-papers">
-                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf">A Pythonic Approach for Rapid Hardware Prototyping and Instrumentation</a>. FPL 2017.</li>
-                                    <li><a href="https://ieeexplore.ieee.org/document/9099999">Agile Hardware Development and Instrumentation with PyRTL</a>. IEEE Micro 2020.</li>
-                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ISCA-18-charm.pdf">Charm: A Language for Closed-form High-level Architecture Modeling</a>. ISCA 2018.</li>
-                                    <li><a href="https://dl.acm.org/doi/pdf/10.1145/3360047">Language Support for Navigating Architecture Design in Closed Form</a>. JETC 2019.</li>
-                                    <li><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/EMC2-19-pyrtl-matrix.pdf">PyRTLMatrix</a>. EMC2 2019. <a href="https://dl.acm.org/doi/10.1145/3338698.3338890">PyRTL in Early Undergraduate Research</a>. WCAE 2019.</li>
+                                    <li data-tags="languages-compilers computer-architecture"><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf">A Pythonic Approach for Rapid Hardware Prototyping and Instrumentation</a>. FPL 2017.</li>
+                                    <li data-tags="languages-compilers computer-architecture"><a href="https://ieeexplore.ieee.org/document/9099999">Agile Hardware Development and Instrumentation with PyRTL</a>. IEEE Micro 2020.</li>
+                                    <li data-tags="languages-compilers computer-architecture"><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/ISCA-18-charm.pdf">Charm: A Language for Closed-form High-level Architecture Modeling</a>. ISCA 2018.</li>
+                                    <li data-tags="languages-compilers computer-architecture"><a href="https://dl.acm.org/doi/pdf/10.1145/3360047">Language Support for Navigating Architecture Design in Closed Form</a>. JETC 2019.</li>
+                                    <li data-tags="machine-learning computer-architecture"><a href="https://sites.cs.ucsb.edu/~sherwood/pubs/EMC2-19-pyrtl-matrix.pdf">PyRTLMatrix</a>. EMC2 2019. <a href="https://dl.acm.org/doi/10.1145/3338698.3338890">PyRTL in Early Undergraduate Research</a>. WCAE 2019.</li>
                                     <li>Code: <a href="https://github.com/UCSBarchlab/PyRTL">PyRTL</a>, <a href="https://github.com/UCSBarchlab/Charm">Charm</a>, <a href="https://github.com/UCSBarchlab/OpenTPU">OpenTPU</a></li>
                                 </ul>
                             </div>
@@ -132,5 +155,76 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            var buttons = Array.prototype.slice.call(document.querySelectorAll('.tag[data-tag]'));
+            var clear = document.getElementById('tag-clear');
+            var vignettes = Array.prototype.slice.call(document.querySelectorAll('.vignette'));
+            var active = [];
+
+            function tagsOf(el) {
+                var s = el.getAttribute('data-tags');
+                return s ? s.split(/\s+/) : [];
+            }
+            function matches(tags) {
+                return tags.some(function (t) { return active.indexOf(t) !== -1; });
+            }
+
+            function apply() {
+                var filtering = active.length > 0;
+                buttons.forEach(function (b) {
+                    var on = active.indexOf(b.dataset.tag) !== -1;
+                    b.classList.toggle('active', on);
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+                clear.classList.toggle('is-visible', filtering);
+                clear.setAttribute('aria-hidden', filtering ? 'false' : 'true');
+
+                vignettes.forEach(function (v) {
+                    var vTags = tagsOf(v);
+                    var items = Array.prototype.slice.call(v.querySelectorAll('.vignette-papers li'));
+                    var anyItem = false;
+                    items.forEach(function (li) {
+                        var t = tagsOf(li);
+                        var on = !filtering || matches(t.length ? t : vTags);
+                        li.classList.toggle('dimmed', !on);
+                        if (on) { anyItem = true; }
+                    });
+                    var vOn = !filtering || matches(vTags) || anyItem;
+                    v.classList.toggle('dimmed', !vOn);
+                });
+
+                // Sections with nothing matching fade as a whole.
+                Array.prototype.forEach.call(document.querySelectorAll('.block-content'), function (sec) {
+                    var vs = Array.prototype.slice.call(sec.querySelectorAll('.vignette'));
+                    var any = vs.some(function (v) { return !v.classList.contains('dimmed'); });
+                    sec.classList.toggle('dimmed', filtering && !any);
+                });
+
+                if (history.replaceState) {
+                    history.replaceState(null, '', filtering ? '#tag=' + active.join(',') : location.pathname);
+                }
+            }
+
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var t = b.dataset.tag;
+                    var i = active.indexOf(t);
+                    if (i === -1) { active.push(t); } else { active.splice(i, 1); }
+                    apply();
+                });
+            });
+            clear.addEventListener('click', function () { active = []; apply(); });
+
+            var m = location.hash.match(/^#tag=([\w,-]+)/);
+            if (m) {
+                active = m[1].split(',').filter(function (t) {
+                    return buttons.some(function (b) { return b.dataset.tag === t; });
+                });
+                apply();
+            }
+        })();
+    </script>
 </body>
 </html>

@@ -514,3 +514,82 @@ h2 {
 .vignette-text:only-child {
     grid-column: 1 / -1;
 }
+
+/* Research topic filter */
+.tag-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: -4px 0 20px;
+}
+
+.tag-bar-label {
+    font-size: 13px;
+    color: var(--muted-color);
+    margin-right: 2px;
+}
+
+.tag {
+    font-family: var(--font-family);
+    font-size: 12.5px;
+    line-height: 1;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--nav-border);
+    background: var(--nav-background);
+    color: var(--subtle-color);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.tag:hover {
+    border-color: var(--link-color);
+    color: var(--text-color);
+}
+
+.tag.active {
+    background: var(--link-color);
+    border-color: var(--link-color);
+    color: #ffffff;
+}
+
+.tag-clear {
+    background: transparent;
+    border-color: transparent;
+    color: var(--muted-color);
+    text-decoration: underline;
+    padding-left: 2px;
+    padding-right: 0;
+    visibility: hidden;
+}
+
+.tag-clear.is-visible {
+    visibility: visible;
+}
+
+.section-note {
+    color: var(--muted-color);
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+.vignette,
+.vignette-papers li,
+.block-content {
+    transition: opacity 0.2s;
+}
+
+.vignette.dimmed,
+.vignette-papers li.dimmed {
+    opacity: 0.3;
+}
+
+.vignette.dimmed .vignette-papers li.dimmed {
+    opacity: 1; /* avoid double fading inside a dimmed vignette */
+}
+
+.block-content.dimmed > h2,
+.block-content.dimmed > .section-note {
+    opacity: 0.3;
+}
