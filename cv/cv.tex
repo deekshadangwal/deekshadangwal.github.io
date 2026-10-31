@@ -1,0 +1,241 @@
+% Deeksha Dangwal, academic CV
+% Build: tectonic cv.tex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{kpfonts}
+\usepackage{microtype}
+\usepackage[margin=1in,top=0.95in,bottom=0.9in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{linkblue}{HTML}{4A90D9}
+\definecolor{noteRed}{HTML}{C0392B}
+\definecolor{gray}{HTML}{777777}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+
+\newcommand{\updated}{Updated October 2026}
+\newcommand{\me}{\textbf{D.~Dangwal}}
+\newcommand{\note}[1]{\\ \textcolor{noteRed}{#1}}
+\newcommand{\pubtarget}[1]{\raisebox{\baselineskip}[0pt][0pt]{\hypertarget{pub:#1}{}}[#1]}
+\newcommand{\pref}[1]{\hyperlink{pub:#1}{[#1]}}
+\newcommand{\pr}[1]{\hyperlink{pub:#1}{#1}}
+\newcommand{\paperlink}[1]{\href{#1}{[link]}}
+\newcommand{\scholar}{\href{https://scholar.google.com/citations?user=11KckrAAAAAJ}{Google Scholar profile}}
+
+% Section headings
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+
+% Year-in-the-margin lists
+\newlist{yearlist}{itemize}{1}
+\setlist[yearlist]{before=\interlinepenalty10000\relax, leftmargin=0.8in, labelwidth=0.7in, labelsep=0.1in, align=left,
+                   itemsep=2pt, parsep=0pt, topsep=4pt, label={}}
+% Publication lists with [C1]-style labels
+\newlist{publist}{itemize}{1}
+\setlist[publist]{before=\interlinepenalty10000\relax, leftmargin=0.6in, labelwidth=0.5in, labelsep=0.1in, align=right,
+                  itemsep=4pt, parsep=0pt, topsep=3pt, label={}}
+% Compact bullets under an appointment
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small\textcolor{gray}{\updated}}
+
+\setlength{\emergencystretch}{1.5em}
+\hfuzz=1pt
+% Never break a page between a list and the line that introduces it
+\makeatletter \@beginparpenalty=10000 \makeatother
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+{\LARGE\bfseries Deeksha Dangwal}
+
+\vspace{10pt}
+\begin{tabularx}{\textwidth}{@{}X r@{\hspace{6pt}}l@{}}
+MATS Research          & Email:   & \href{mailto:deekshadangwal@gmail.com}{deekshadangwal@gmail.com} \\
+Berkeley, CA           & Website: & \href{https://www.deekshadangwal.com}{deekshadangwal.com} \\
+                       & Scholar: & \scholar \\
+\end{tabularx}
+
+\section{Research Focus}
+
+I am a systems researcher working on AI safety. My background is in computer architecture and hardware security, and I study where safety mechanisms should be enforced in the training stack. My current work is on compute verification and on training-time safety monitoring. My work in computer architecture, privacy, and secure computation has appeared in ISCA, ASPLOS, PLDI, FPL, BMVC, and TMLR. My SoK on hardware-software-security codesign was cited in the \emph{US National Strategy on Microelectronics Research}, I am a Rising Stars in EECS alumna, and trace wringing was an IEEE Micro Top Pick.
+
+\section{Education}
+
+\begin{yearlist}
+\item[2022] \textbf{Ph.D.\ in Computer Science}, University of California, Santa Barbara \\
+  Thesis: \href{https://www.proquest.com/docview/2923629631}{\emph{A System-level Framework for Privacy}}. Advisor: Timothy Sherwood
+\item[2016] \textbf{M.S.\ in Electrical and Computer Engineering}, \\ University of California, Santa Barbara
+\item[2014] \looseness=-1 \textbf{B.E.\ in Instrumentation and Electronics}, Ramaiah Institute of Technology, Bangalore
+\end{yearlist}
+
+\section{Appointments}
+
+\begin{yearlist}
+\item[2026--] \textbf{Fellow}, MATS Research, Berkeley, CA. Mentor: James Petrie (Future of Life Institute)
+  \begin{itemize}
+  \item \emph{Compute verification}: designing and empirically evaluating software-based compute verification protocols (memory-state challenges, subsampled zero-knowledge proofs) that bound undeclared GPU workloads without trusted hardware
+  \end{itemize}
+\item[2026--] \textbf{Research Fellow}, ERA:AI Fellowship in Technical AI Governance, Cambridge, UK. Mentor: Alan Cooney (Google DeepMind)
+  \begin{itemize}
+  \item \emph{Training-time safety monitoring}: asks whether a fine-tuning job that removes a model's safety training can be detected while it is still running. The monitor runs below the privilege level of the party running the job, outside that party's control
+  \end{itemize}
+\item[2025] \textbf{Consultant}, Office of the CTO, The Allen Institute, Seattle, WA
+  \begin{itemize}
+  \item \emph{Neural tracing}: co-developed neural tracing for mechanistic interpretability of LLMs and bio-foundation models. Patent application filed \pref{P2}
+  \end{itemize}
+\item[2022--25] \textbf{Research Scientist}, Reality Labs Research, Meta
+  \begin{itemize}
+  \item \emph{Distributed intelligence and on-device AI}: prototyped gesture interaction for smart glasses (data collection, model training, compression, and demo) on an SoC with custom and off-the-shelf accelerators. Through HW/SW codesign and energy-aware scheduling, the pipeline improved latency and power by 93\% and 74\%
+  \item \emph{Performance and power modeling}: built a Python-based system-level power and performance modeling tool for Project Aria and other wearable devices using discrete-event simulation, calibrated against measurements on prototype devices running machine perception pipelines (eye tracking, hand and gesture tracking, \mbox{localization and mapping})
+  \item \emph{Hardware-software-security codesign in extended reality}: developed a security and privacy research program for mixed and augmented reality, establishing threat models for codec avatars, privately crowdsourced data collection for world modeling, and other XR applications [\pr{W3}, \pr{C5}, \pr{C4}, \pr{J4}, \pr{A1}]
+  \end{itemize}
+\item[2015--21] \textbf{Graduate Student Researcher}, ArchLab, University of California, Santa Barbara
+  \begin{itemize}
+  \item \emph{Trace wringing}: developed trace wringing for safer program behavior sharing, achieving privacy through lossy compression and information flow tracking with verifiable leakage bounds [\pr{C3}, \pr{C6}]; recognized as an IEEE Micro Top Pick \pref{J2}
+  \item \emph{Agile hardware development with PyRTL}: co-developed PyRTL, a Pythonic hardware development toolkit for rapid prototyping and agile hardware design [\pr{C1}, \pr{J3}]
+  \item \emph{Architecture modeling with Charm}: worked on Charm, a domain-specific language for high-level architecture modeling [\pr{C2}, \pr{J1}]
+  \item \emph{OpenTPU}: led development of an open-source tensor processing unit in PyRTL
+  \end{itemize}
+\end{yearlist}
+
+\subsection{Research Internships}
+
+\begin{yearlist}
+\item[2020--21] \textbf{Research Scientist Intern}, Reality Labs Research, Meta
+  \begin{itemize}
+  \item Implemented a novel reverse engineering attack on local feature descriptors, surpassing state-of-the-art reconstruction accuracy for user image recovery; established the first privacy threat model for feature descriptor sharing in AR systems; developed privacy-preserving mitigations and studied their effect on downstream vision performance \pref{C4}
+  \end{itemize}
+\item[2018] \textbf{Research Intern}, Microsoft Research
+  \begin{itemize}
+  \item Implemented parameterizable architecture-aware machine learning graph primitives for custom hardware instructions on the Brainwave Neural Processing Unit; built tools for automatic lifting of hardware instructions to high-level graph primitives; designed a computational pipeline for NPU model decompilation with \mbox{accuracy verification} \pref{P1}
+  \end{itemize}
+\item[2016] \textbf{Research Assistant}, Oracle Labs
+  \begin{itemize}
+  \item Established a testing environment for measuring throughput of the RAPID Data Processing Unit network, a bandwidth-optimized big data computation architecture; implemented network congestion tests using hardware RPC acceleration
+  \end{itemize}
+\end{yearlist}
+
+\section{Awards and Honors}
+
+\begin{yearlist}
+\item[2024] Paper cited in the \href{https://www.nitrd.gov/pubs/National-Strategy-on-Microelectronics-Research-March-2024.pdf}{\emph{United States National Strategy on Microelectronics Research}} \pref{W3}
+\item[2021] Runner-up, UCSB Grad Slam Competition
+\item[2020] Rising Stars in EECS, UC Berkeley
+\item[2020] IEEE Micro Top Pick \pref{J2}
+\item[2020] Fiona and Michael Goodchild Graduate Mentoring Award, UCSB Graduate Division
+\item[2020] Outstanding Graduate Student Award, Department of Computer Science, UCSB
+\end{yearlist}
+
+\section{Publications}
+
+See my \scholar\ for citation records. In computer architecture and systems, top-tier conferences are the primary archival venues and are comparable to journals in other disciplines in selectivity and impact. [C] conference, [J] journal or magazine, [W] workshop, [A] preprints and reports, [P] patents.
+
+\subsection{Conference Publications}
+
+\begin{publist}
+\item[\pubtarget{C6}] \me, Z.~Zhang, J.~Crandall, T.~Sherwood. ``Context-Aware Privacy-Optimizing Address Tracing''. \emph{IEEE International Symposium on Secure and Private Execution Environment Design (SEED)}, 2021. \paperlink{https://ieeexplore.ieee.org/document/9604789}
+\item[\pubtarget{C5}] M.~Cowan, \me, A.~Alaghi, C.~Trippel, V.~T.~Lee, B.~Reagen. ``Porcupine: A Synthesizing Compiler for Vectorized Homomorphic Encryption''. \emph{ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)}, 2021. \paperlink{https://dl.acm.org/doi/10.1145/3453483.3454050}
+\item[\pubtarget{C4}] \me, V.~T.~Lee, H.~J.~Kim, T.~Shen, M.~Cowan, R.~Shah, C.~Trippel, B.~Reagen, T.~Sherwood, V.~Balntas, A.~Alaghi, E.~Ilg. ``Mitigating Reverse Engineering Attacks on Local Feature Descriptors''. \emph{British Machine Vision Conference (BMVC)}, 2021. \paperlink{https://bmva-archive.org.uk/bmvc/2021/assets/papers/1603.pdf}
+\item[\pubtarget{C3}] \me, W.~Cui, J.~McMahan, T.~Sherwood. ``Safer Program Behavior Sharing through Trace Wringing''. \emph{International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)}, 2019. \paperlink{https://dl.acm.org/doi/10.1145/3297858.3304074}
+  \note{Selected as an IEEE Micro Top Pick \pref{J2}.}
+\item[\pubtarget{C2}] W.~Cui, Y.~Ding, \me, A.~Holmes, J.~McMahan, A.~JavadiAbhari, G.~Tzimpragos, F.~Chong, T.~Sherwood. ``Charm: A Language for Closed-form High-level Architecture Modeling''. \emph{International Symposium on Computer Architecture (ISCA)}, 2018. \paperlink{https://ieeexplore.ieee.org/document/8416825}
+\item[\pubtarget{C1}] J.~Clow, G.~Tzimpragos, \me, S.~Guo, J.~McMahan, T.~Sherwood. ``A Pythonic Approach for Rapid Hardware Prototyping and Instrumentation''. \emph{International Conference on Field-Programmable Logic and Applications (FPL)}, 2017. \paperlink{https://ieeexplore.ieee.org/document/8056860}
+\end{publist}
+
+\subsection{Journal and Magazine Publications}
+
+\begin{publist}
+\item[\pubtarget{J4}] S.~Q.~Zhang, Z.~Li, C.~Guo, S.~Mahloujifar, \me, E.~Suh, B.~D.~Salvo, C.~Liu. ``Unlocking Visual Secrets: Inverting Features with Diffusion Priors for Image Reconstruction''. \emph{Transactions on Machine Learning Research (TMLR)}, 2025. \paperlink{https://arxiv.org/pdf/2412.10448}
+\item[\pubtarget{J3}] \me, G.~Tzimpragos, T.~Sherwood. ``Agile Hardware Development and Instrumentation with PyRTL''. \emph{IEEE Micro, Special Issue on Agile and Open Source Hardware}, 2020. \paperlink{https://ieeexplore.ieee.org/document/9099999}
+\item[\pubtarget{J2}] \me, W.~Cui, J.~McMahan, T.~Sherwood. ``Trace Wringing for Program Trace Privacy''. \emph{IEEE Micro, Top Picks from the Computer Architecture Conferences}, 2020. \paperlink{https://sites.cs.ucsb.edu/~sherwood/pubs/IEEEMicro-20-wringing.pdf}
+  \note{IEEE Micro Top Pick.}
+\item[\pubtarget{J1}] W.~Cui, G.~Tzimpragos, Y.~Tao, J.~McMahan, \me, N.~Tsiskaridze, G.~Michelogiannakis, D.~Vasudevan, T.~Sherwood. ``Language Support for Navigating Architecture Design in Closed Form''. \emph{ACM Journal on Emerging Technologies in Computing Systems (JETC)}, 2019. \paperlink{https://dl.acm.org/doi/pdf/10.1145/3360047}
+\end{publist}
+
+\subsection{Workshop Publications}
+
+\begin{publist}
+\item[\pubtarget{W4}] \me, A.~Rajagopal. ``The Need for Computational Pluralism''. \emph{Workshop on Ethical Systems and Architecture Design (HotEthics)}, 2026.
+\item[\pubtarget{W3}] \me, M.~Cowan, A.~Alaghi, V.~Lee, B.~Reagen, C.~Trippel. ``SoK: Opportunities for Software-Hardware-Security Codesign for Next Generation Secure Computing''. \emph{Hardware and Architectural Support for Security and Privacy (HASP)}, 2020. \paperlink{https://arxiv.org/pdf/2105.00378}
+  \note{Cited in the United States National Strategy on Microelectronics Research, 2024.}
+\item[\pubtarget{W2}] D.~Aboye, D.~Kupsh, M.~Lim, J.~Mai, \me, D.~Mirza, T.~Sherwood. ``PyRTLMatrix: An Object-Oriented Hardware Design Pattern for Prototyping ML Accelerators''. \emph{Workshop on Energy Efficient Machine Learning and Cognitive Computing for Embedded Applications (EMC2)}, 2019. \paperlink{https://sites.cs.ucsb.edu/~sherwood/pubs/EMC2-19-pyrtl-matrix.pdf}
+\item[\pubtarget{W1}] D.~Mirza, \me, T.~Sherwood. ``PyRTL in Early Undergraduate Research''. \emph{Workshop on Computer Architecture Education (WCAE)}, 2019. \paperlink{https://dl.acm.org/doi/10.1145/3338698.3338890}
+\end{publist}
+
+\subsection{Preprints and Reports}
+
+\begin{publist}
+\item[\pubtarget{A2}] ``Mechanism Design for Improving Hardware Security''. \emph{Computing Community Consortium (CCC) Workshop Report}, August 2022. \paperlink{https://cra.org/ccc/wp-content/uploads/sites/2/2023/04/01378-Mechanism-Design-Workshop-Report.pdf}
+\item[\pubtarget{A1}] \me, V.~T.~Lee, H.~J.~Kim, T.~Shen, M.~Cowan, R.~Shah, C.~Trippel, B.~Reagen, T.~Sherwood, V.~Balntas, A.~Alaghi, E.~Ilg. ``Analysis and Mitigations of Reverse Engineering Attacks on Local Feature Descriptors''. arXiv preprint, May 2021. \paperlink{https://arxiv.org/abs/2105.03812}
+\end{publist}
+
+\subsection{Patents}
+
+\begin{publist}
+\item[\pubtarget{P2}] A.~Rajagopal, G.~H.~Huynh, \me. ``Model Optimization and Data Analysis Using Neural Traces''. Provisional patent filed September 2025.
+\item[\pubtarget{P1}] J.~Fowers, D.~Lo, \me. ``Deriving a Concordant Software Neural Network Layer from a Quantized Firmware Neural Network Layer''. US Patent 11,556,764, Microsoft Technology Licensing LLC, 2023. \paperlink{https://patents.google.com/patent/US11556764B2/en}
+\end{publist}
+
+\section{Invited Talks and Seminars}
+
+\begin{yearlist}
+\item[2025] \emph{Performance, Power, and Privacy: Codesign Strategies for Always-On Wearables}. Washington State University, Pullman
+\item[2025] \emph{Privacy and Security in the Age of Metaverse: A Case for Data Minimization and On-device AI}. Washington State University, Everett
+\item[2021] \emph{A System-Level Framework for Privacy: Applications of Wringing in AR/VR}. \\ Reality Labs Research, Meta
+\item[2021] \emph{A System-Level Framework for Privacy}. Arizona State University
+\item[2021] \emph{A System-Level Framework for Privacy}. Pennsylvania State University
+\item[2021] \emph{Privacy through Wringing}. UCSB Grad Slam Final
+\item[2019] \emph{Agile Hardware Development and Instrumentation with PyRTL}. Agile-RTL Workshop, UC Santa Barbara
+\item[2019] \emph{OpenTPU: Prototyping ML Accelerators with PyRTL}. \\ IEEE Space Computing Conference, Caltech
+\end{yearlist}
+
+\section{Teaching and Mentorship}
+
+\begin{yearlist}
+\item[2026] \textbf{Mentor}, SPAR (Supervised Program for Alignment Research), Fall 2026 \\
+  Project: \href{https://sparai.org/projects/f26/recIHq2myqMGSkiHs/}{\emph{Constraint Drift Through Delegation Hierarchies}}, co-mentored with Abhejit \mbox{Rajagopal} (Allen Institute and UCSF)
+\item[2021] \textbf{Teaching Assistant}, CS 154: Computer Architecture, UCSB
+\item[2019] \textbf{Teaching Assistant}, Research Mentorship Program (RMP), UCSB
+\item[2018--19] \textbf{NSF ERSP Mentor}, Department of Computer Science, UCSB \\
+  Students published PyRTLMatrix at the EMC2 workshop \pref{W2}. Awarded the university-wide Fiona and Michael Goodchild Graduate Mentoring Award
+\item[2016--18] \textbf{Mentor}, Women in STEM Mentorship Program, UCSB
+\item[2015] \textbf{Teaching Assistant}, Department of Physics, UCSB
+\item[2015] \textbf{Mentor}, EUREKA Mentorship Program, California NanoSystems Institute, UCSB
+\end{yearlist}
+
+\textbf{Students mentored:} Joann Chen (Research Intern, Meta, 2022), Manu Kondapaneni (2020), \mbox{Junayed Naushad} (2019), Dawit Aboye (2018--19), Dylan Kupsh (2018--19), Maggi Lim (2018--19), Jacqueline Mai (2018--19), Angela Yung (2016--17), Saurabh Gupta (2015)
+
+\section{Professional Service}
+
+\begin{yearlist}
+\item[2025] \textbf{CRA Congressional Visit Day}, Washington State contingent. Represented CRA and Washington State in Washington, D.C., in meetings with Members of Congress on federal support for computing research
+\item[2025] Invited participant, CCC Future of AI Research in Industry
+\item[2025] Invited participant, CCC Computing Futures Symposium
+\item[2022] Invited participant, CCC Mechanism Design for Improving Hardware Security \pref{A2}
+\item[2022--25] Organizer, Undergraduate Architecture Mentoring Workshop (uArch)
+\item[2018--20] Co-President, Women in Computer Science (WiCS), UCSB
+\item[2019--20] Graduate Representative for Faculty Recruitment, \\ Department of Computer Science, UCSB
+\item[2018--19] Graduate Representative for Diversity, Department of Computer Science, UCSB
+\item[2017--19] Grace Hopper Celebration of Women in Computing (attendee)
+\item[2017--18] CRA-W Grad Cohort (attendee)
+\end{yearlist}
+
+\textbf{Program committees:} MICRO 2026, ISPASS 2026, HPCA 2024--2026, ASPLOS 2025, ISCA 2024, SEED 2024, HASP 2023
+
+\textbf{External review committees:} MICRO 2024, YArch 2023 and 2025, ISCA 2022, SEED 2021, \mbox{ASPLOS 2020} (artifact evaluation)
+
+\end{document}
