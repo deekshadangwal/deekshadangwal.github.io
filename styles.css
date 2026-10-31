@@ -592,37 +592,40 @@ h2 {
     margin-left: -19px;
 }
 
-/* Small tag chips on papers and projects */
+/* Small tag labels on papers and projects: plain muted text, no box */
 .paper-tags {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-left: 6px;
-    vertical-align: 1px;
+    display: inline;
+    margin-left: 10px;
+    white-space: nowrap;
 }
 
 .ptag {
     font-family: var(--font-family);
-    font-size: 11px;
+    font-size: 11.5px;
     line-height: 1;
-    padding: 2px 7px;
-    border-radius: 999px;
-    border: 1px solid var(--divider-color);
+    padding: 0;
+    margin-right: 10px;
+    border: 0;
     background: transparent;
     color: var(--muted-color);
+    opacity: 0.8;
     cursor: pointer;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    transition: color 0.15s, opacity 0.15s;
+}
+
+.ptag:last-child {
+    margin-right: 0;
 }
 
 .ptag:hover {
-    border-color: var(--link-color);
-    color: var(--text-color);
+    color: var(--link-color);
+    opacity: 1;
 }
 
 .ptag.hit {
-    background: var(--link-color);
-    border-color: var(--link-color);
-    color: #ffffff;
+    color: var(--link-color);
+    opacity: 1;
+    font-weight: 600;
 }
 
 .vignette.dimmed .vignette-papers li.dimmed {
