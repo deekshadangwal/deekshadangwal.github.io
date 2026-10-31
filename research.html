@@ -162,6 +162,8 @@
             var clear = document.getElementById('tag-clear');
             var vignettes = Array.prototype.slice.call(document.querySelectorAll('.vignette'));
             var active = [];
+            var labels = {};
+            buttons.forEach(function (b) { labels[b.dataset.tag] = b.textContent; });
 
             function tagsOf(el) {
                 var s = el.getAttribute('data-tags');
@@ -170,6 +172,38 @@
             function matches(tags) {
                 return tags.some(function (t) { return active.indexOf(t) !== -1; });
             }
+            function toggle(t) {
+                var i = active.indexOf(t);
+                if (i === -1) { active.push(t); } else { active.splice(i, 1); }
+                apply();
+            }
+
+            // Small tag chips: after each paper, or after the project line when a project lists no papers.
+            function chipsFor(tags) {
+                var wrap = document.createElement('span');
+                wrap.className = 'paper-tags';
+                tags.forEach(function (t) {
+                    if (!labels[t]) { return; }
+                    var c = document.createElement('button');
+                    c.type = 'button';
+                    c.className = 'ptag';
+                    c.dataset.tag = t;
+                    c.textContent = labels[t];
+                    c.title = 'Filter by ' + labels[t];
+                    c.addEventListener('click', function () { toggle(t); });
+                    wrap.appendChild(c);
+                });
+                return wrap;
+            }
+            vignettes.forEach(function (v) {
+                var items = Array.prototype.slice.call(v.querySelectorAll('.vignette-papers li[data-tags]'));
+                items.forEach(function (li) { li.appendChild(chipsFor(tagsOf(li))); });
+                if (items.length === 0) {
+                    var meta = v.querySelector('.vignette-meta');
+                    if (meta) { meta.appendChild(chipsFor(tagsOf(v))); }
+                }
+            });
+            var chips = Array.prototype.slice.call(document.querySelectorAll('.ptag'));
 
             function apply() {
                 var filtering = active.length > 0;
@@ -177,6 +211,9 @@
                     var on = active.indexOf(b.dataset.tag) !== -1;
                     b.classList.toggle('active', on);
                     b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+                chips.forEach(function (c) {
+                    c.classList.toggle('hit', active.indexOf(c.dataset.tag) !== -1);
                 });
                 clear.classList.toggle('is-visible', filtering);
                 clear.setAttribute('aria-hidden', filtering ? 'false' : 'true');
@@ -193,6 +230,7 @@
                     });
                     var vOn = !filtering || matches(vTags) || anyItem;
                     v.classList.toggle('dimmed', !vOn);
+                    v.classList.toggle('hit', filtering && vOn);
                 });
 
                 // Sections with nothing matching fade as a whole.
@@ -208,20 +246,13 @@
             }
 
             buttons.forEach(function (b) {
-                b.addEventListener('click', function () {
-                    var t = b.dataset.tag;
-                    var i = active.indexOf(t);
-                    if (i === -1) { active.push(t); } else { active.splice(i, 1); }
-                    apply();
-                });
+                b.addEventListener('click', function () { toggle(b.dataset.tag); });
             });
             clear.addEventListener('click', function () { active = []; apply(); });
 
             var m = location.hash.match(/^#tag=([\w,-]+)/);
             if (m) {
-                active = m[1].split(',').filter(function (t) {
-                    return buttons.some(function (b) { return b.dataset.tag === t; });
-                });
+                active = m[1].split(',').filter(function (t) { return !!labels[t]; });
                 apply();
             }
         })();

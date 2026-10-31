@@ -582,7 +582,47 @@ h2 {
 
 .vignette.dimmed,
 .vignette-papers li.dimmed {
-    opacity: 0.3;
+    opacity: 0.18;
+}
+
+/* A matching project gets a colored accent while a filter is active */
+.vignette.hit {
+    border-left: 3px solid var(--link-color);
+    padding-left: 16px;
+    margin-left: -19px;
+}
+
+/* Small tag chips on papers and projects */
+.paper-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-left: 6px;
+    vertical-align: 1px;
+}
+
+.ptag {
+    font-family: var(--font-family);
+    font-size: 11px;
+    line-height: 1;
+    padding: 2px 7px;
+    border-radius: 999px;
+    border: 1px solid var(--divider-color);
+    background: transparent;
+    color: var(--muted-color);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.ptag:hover {
+    border-color: var(--link-color);
+    color: var(--text-color);
+}
+
+.ptag.hit {
+    background: var(--link-color);
+    border-color: var(--link-color);
+    color: #ffffff;
 }
 
 .vignette.dimmed .vignette-papers li.dimmed {
@@ -591,5 +631,5 @@ h2 {
 
 .block-content.dimmed > h2,
 .block-content.dimmed > .section-note {
-    opacity: 0.3;
+    opacity: 0.18;
 }
